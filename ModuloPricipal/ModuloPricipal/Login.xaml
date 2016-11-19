@@ -1,0 +1,37 @@
+﻿<Window x:Class="ModuloPricipal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModuloPricipal"
+        mc:Ignorable="d"
+      
+    Title="Login" Height="332.707" Width="318.045" WindowState="Normal" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"  >
+    <Grid Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Label Content="Usuario" FontSize="20"  FontWeight="Bold"  Margin="5,5,5,5" HorizontalAlignment="Center" Foreground="#FFF1F1F1"></Label>
+        <TextBox Name="txt_user"  Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Grid.Row="1" TextAlignment="Center" />
+
+        <Label Content="Contraseña" Foreground="White" FontSize="20" FontWeight="Bold"  Margin="5,5,5,5" HorizontalAlignment="Center" Grid.Row="2"></Label>
+        <PasswordBox Name="txt_pass" KeyDown="txt_pass_KeyDown_1" FontSize="20" FontWeight="Bold" Grid.Row="3" ></PasswordBox>
+        <Grid Grid.Row="4" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="cmd_star"  Content="Aceptar" HorizontalAlignment="Left" Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Width="100" Click="cmd_star_Click_1"></Button>
+            <Button Name="cmd_exit" Content="Salir" HorizontalAlignment="Left" Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Width="100" Grid.Column="1"></Button>
+        </Grid>
+
+
+
+    </Grid>
+</Window>
