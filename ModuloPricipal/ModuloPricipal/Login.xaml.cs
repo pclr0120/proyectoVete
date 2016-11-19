@@ -22,7 +22,7 @@ namespace ModuloPricipal
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    /// //jojoj
+    /// //jojojds
     public partial class MainWindow : Window
     {
         public MainWindow()
