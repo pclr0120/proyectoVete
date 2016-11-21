@@ -11,8 +11,8 @@
         Title="Menu" Height="555" Width="1024" WindowStartupLocation="CenterScreen">
     <Grid>
         <Controls:Tile Margin="48,46,828,338" Width="auto" Height="auto">
-            <Image Source="C:\Users\PCLR\Source\Repos\proyectoVete2\ModuloPricipal\ModuloPricipal\imagenes\PuntoVenta"></Image>
-                  
+          
+
         </Controls:Tile>
     </Grid>
 </Window>

@@ -110,7 +110,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="imagenes\PuntoVenta.metrop" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -127,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\PuntoVenta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
