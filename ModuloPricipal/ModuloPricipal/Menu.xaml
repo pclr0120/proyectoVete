@@ -8,11 +8,77 @@
      xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Menu" Height="555" Width="1024" WindowStartupLocation="CenterScreen">
+        Title="Menu" Height="727.556" Background="#FF2D2D30" Width="1024" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Controls:Tile Margin="48,46,828,338" Width="auto" Height="auto">
-          
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+
+
+        </Grid.RowDefinitions>
+        <Controls:Tile Grid.Row="1" Grid.Column="1"  Width="350" Height="130" Background="BlueViolet" Title="Ventas" TitleFontSize="20">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\PuntoVenta.png" Height="122" Width="140"></Image>
         </Controls:Tile>
+        <Controls:Tile Grid.Row="1" Grid.Column="2"  Width="250" Height="130" Background="Black" Title="Reportes" TitleFontSize="18">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Reportes.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+
+        <Controls:Tile Title="Mascota" Grid.Row="2" Grid.Column="1"  Width="Auto" Height="130" Background="YellowGreen"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Mascota.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+        <Controls:Tile Title="Clientes" Grid.Row="3" Grid.Column="1"  Width="Auto" Height="130" Background="Purple"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Cliente.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+        <Controls:Tile Title="Empleados" Grid.Row="3" Grid.Column="2"  Width="Auto" Height="130"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Empleado.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+        <Controls:Tile Title="Usuarios" Grid.Row="2" Grid.Column="2"  Width="Auto" Height="130" Background="Navy"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\User.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+        <Controls:Tile Title="Producto" Grid.Row="1" Grid.Column="3"  Width="Auto" Height="130" Background="Green"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Product.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+        <Controls:Tile Title="Proveedores" Grid.Row="2" Grid.Column="3"  Width="Auto" Height="130" Background="Red"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Product.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+
+
+
+
     </Grid>
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-\\mac\home\documents\visual studio 2015\Projects\ModuloPricipal\ModuloPricipal\obj\Debug\
+C:\Users\PCLR\Source\Repos\proyectoVete2\ModuloPricipal\ModuloPricipal\obj\Debug\
 ModuloPricipal
 none
 false
 DEBUG;TRACE
-\\mac\home\documents\visual studio 2015\Projects\ModuloPricipal\ModuloPricipal\App.xaml
-1-1570634313
+C:\Users\PCLR\Source\Repos\proyectoVete2\ModuloPricipal\ModuloPricipal\App.xaml
+4-677887596
 
-5-2138309265
-14-37733517
-Login.xaml;
+6427463537
+16-861125043
+Login.xaml;Menu.xaml;Resources\Icons.xaml;Resources\IconsNonShared.xaml;
 
 False
 
