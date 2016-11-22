@@ -1,0 +1,46 @@
+﻿<Window x:Class="Modulo_Mascota.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Modulo_Mascota"
+        mc:Ignorable="d"
+        Title="Registro Mascota>>>" Height="730.217" Width="721.667" Foreground="#FF8FE66E" Background="#FF8FE66E">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Brush1" Color="White"/>
+    </Window.Resources>
+    <Grid Margin="0,0,0,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="42*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblidMascota" Content="Nombre:" HorizontalAlignment="Left" Margin="79,149,0,0" VerticalAlignment="Top" Width="132" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblidMascota_Copy" Content="Especie:" HorizontalAlignment="Left" Margin="79,184,0,0" VerticalAlignment="Top" Width="132" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblidMascota_Copy1" Content="Raza:" HorizontalAlignment="Left" Margin="79,217,0,0" VerticalAlignment="Top" Width="132" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblidMascota_Copy2" Content="Color:" HorizontalAlignment="Left" Margin="79,251,0,0" VerticalAlignment="Top" Width="132" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblidMascota_Copy3" Content="Peso:" HorizontalAlignment="Left" Margin="79,285,0,0" VerticalAlignment="Top" Width="142" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblidMascota_Copy5" Content="Señas Particulares:" HorizontalAlignment="Left" Margin="73,419,0,0" VerticalAlignment="Top" Width="132" Height="25" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblidMascota_Copy6" Content="Fecha Nacimiento:" HorizontalAlignment="Left" Margin="73,463,0,0" VerticalAlignment="Top" Width="132" Height="25" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="20" Margin="11,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="20" Margin="11,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="20" Margin="11,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="20" Margin="11,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="20" Margin="11,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="20" Margin="11,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <Button x:Name="button" Content="Registrar Mascota&gt;&gt;&gt;" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="328,550,0,0" VerticalAlignment="Top" Width="128" Grid.ColumnSpan="2" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Cancelar&gt;&gt;&gt;" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="328,592,0,0" VerticalAlignment="Top" Width="128" Grid.ColumnSpan="2"/>
+        <GroupBox x:Name="groupBox" Grid.ColumnSpan="2" Header="Sexo:" HorizontalAlignment="Left" FontSize="14" Height="68" Margin="85,340,0,0" VerticalAlignment="Top" Width="318" Foreground="Black" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <GroupBox.Background>
+                <ImageBrush/>
+            </GroupBox.Background>
+        </GroupBox>
+        <DatePicker HorizontalAlignment="Left" Height="26" Margin="11,463,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1"/>
+        <RadioButton x:Name="radioButton" Content="Macho" HorizontalAlignment="Left" Margin="131,373,0,0" VerticalAlignment="Top" Checked="radioButton_Checked" Height="15" Width="56"/>
+        <RadioButton x:Name="radioButton1" Content="Hembra" Grid.Column="1" HorizontalAlignment="Left" Margin="70,373,0,0" VerticalAlignment="Top" Checked="radioButton1_Checked" Height="15" Width="62"/>
+        <Label x:Name="lblidMascota_Copy4" Content="ID-Cliente:" HorizontalAlignment="Left" Margin="79,62,0,0" VerticalAlignment="Top" Width="132" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="20" Margin="11,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <GroupBox x:Name="groupBox1" Grid.ColumnSpan="3" Header="Datos-Mascota" Foreground="Black" HorizontalAlignment="Left" Height="396" Margin="61,115,0,0" VerticalAlignment="Top" Width="595" FontSize="14"/>
+
+    </Grid>
+</Window>
