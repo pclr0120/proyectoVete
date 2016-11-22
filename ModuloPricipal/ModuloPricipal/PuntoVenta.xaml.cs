@@ -115,9 +115,10 @@ namespace ModuloPricipal
                 consultarPro();
                 dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
 
+
                 //this.dataGrid.ItemsSource = miLista;
 
-               
+
 
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
@@ -157,7 +158,12 @@ namespace ModuloPricipal
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            dataGrid.Items.Remove(DeleteIndex);
+
+            //dataGrid.Items.Remove(DeleteIndex);
+            consultap.Tables["productos"].Rows.RemoveAt(2);
+            dataGrid.ItemsSource = null;
+            dataGrid.ItemsSource= consultap.Tables["productos"].DefaultView;
+            
         }
     }
 }
