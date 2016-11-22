@@ -117,7 +117,7 @@ namespace ModuloPricipal
 
                 //this.dataGrid.ItemsSource = miLista;
 
-
+               
 
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
