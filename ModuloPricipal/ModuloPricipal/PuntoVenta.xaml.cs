@@ -150,20 +150,22 @@ namespace ModuloPricipal
             c += 1;
         }
         int DeleteIndex;
-        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+
+
+      
+
+        private void dataGrid_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
             DeleteIndex = dataGrid.SelectedIndex;
             MessageBox.Show(DeleteIndex.ToString());
         }
 
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        private void btnCancelar_Click_1(object sender, RoutedEventArgs e)
         {
-
             //dataGrid.Items.Remove(DeleteIndex);
             consultap.Tables["productos"].Rows.RemoveAt(2);
             dataGrid.ItemsSource = null;
-            dataGrid.ItemsSource= consultap.Tables["productos"].DefaultView;
-            
+            dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
         }
     }
 }
