@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModuloPricipal"
+           xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
+        
       
-    Title="Login" Height="332.707" Width="318.045" WindowState="Normal" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"  >
+    Title="Login" Height="500" Width="400" WindowState="Normal" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"  >
     <Grid Background="#FF2D2D30">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" ></RowDefinition>
@@ -16,19 +19,20 @@
             <RowDefinition Height="auto" ></RowDefinition>
 
         </Grid.RowDefinitions>
-        <Label Content="Usuario" FontSize="20"  FontWeight="Bold"  Margin="5,5,5,5" HorizontalAlignment="Center" Foreground="#FFF1F1F1"></Label>
-        <TextBox Name="txt_user"  Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Grid.Row="1" TextAlignment="Center" />
+        <Image Source="imagenes\login-Door.png" Height="100" Width="100" Grid.Row="0" Grid.Column="0"></Image>
+        <TextBox Height="35" MaxLength="10" Width="300" Name="txt_user" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese un usuario"  Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Grid.Row="1" TextAlignment="Center" />
 
-        <Label Content="Contraseña" Foreground="White" FontSize="20" FontWeight="Bold"  Margin="5,5,5,5" HorizontalAlignment="Center" Grid.Row="2"></Label>
-        <PasswordBox Name="txt_pass" KeyDown="txt_pass_KeyDown_1" FontSize="20" FontWeight="Bold" Grid.Row="3" ></PasswordBox>
+        <Label Content="" Foreground="White" FontSize="20" FontWeight="Bold"  Margin="5,5,5,5" HorizontalAlignment="Center" Grid.Row="2"></Label>
+        <PasswordBox  MaxLength="10" Height="35" Width="300" Name="txt_pass" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese la contraseña" KeyDown="txt_pass_KeyDown_1" FontSize="20" FontWeight="Bold" Grid.Row="3" ></PasswordBox>
+        <Image Source="imagenes\Pass.png" Height="70" Width="60"  Grid.Row="3" Margin="325,1,-33,0"></Image>
+
         <Grid Grid.Row="4" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Button Name="cmd_star"  Content="Aceptar" HorizontalAlignment="Left" Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Width="100" Click="cmd_star_Click_1"></Button>
-            <Button Name="cmd_exit" Content="Salir" HorizontalAlignment="Left" Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Width="100" Grid.Column="1"></Button>
+            <Button Name="cmd_star"  Content="Iniciar" HorizontalAlignment="Left" Margin="5,5,5,5" FontSize="20" FontWeight="Bold" Width="150" Click="cmd_star_Click_1"></Button>
         </Grid>
 
 

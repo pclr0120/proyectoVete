@@ -62,10 +62,11 @@ namespace ModuloPricipal
                     adaptador.Fill(consulta, "usuarios");
                     if (consulta.Tables[0].Rows.Count > 0)
                     {
-                        
-                        
+
+                        Menu m =  new Menu();
+                        m.Show();
                         this.Hide();
-                        MessageBox.Show("hollallaa");
+
                     }
                     else
                     {
