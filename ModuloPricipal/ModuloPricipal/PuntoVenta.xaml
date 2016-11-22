@@ -40,19 +40,21 @@
             <Label Content="Articulo:" FontSize="18" FontWeight="Bold" Margin="5,5,5,5"  Grid.Row="1" Grid.Column="1" Foreground="White" Width="auto"  ></Label>
             <ComboBox Name="cb_produc"  IsTextSearchEnabled="True"  IsEditable="True"  ItemsSource="{Binding}" FontSize="20" FontWeight="Bold" Margin="5,5,5,5" Width="200" Grid.Row="1" Grid.Column="2"  />
 
-            <Label Content="Cantidad:" FontSize="18" FontWeight="Bold" Margin="5,5,5,5" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3"  Foreground="White" Width="auto" ></Label>
-            <TextBox Name="txt_cantidad"    MaxLength="2" FontSize="20" FontWeight="Bold" Margin="5,5,5,5" Width="50" Grid.Row="1" Grid.Column="4"  Height="30" />
-
 
 
         </Grid>
         <DataGrid x:Name="dataGrid"     HorizontalAlignment="Left" Margin="5,5,5,5"
                   VerticalAlignment="Top" Height="390" Width="629" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
                    CanUserDeleteRows="False"
+                 FontSize="18"
+                  FontStyle="Italic" FontFamily="18"
                      
                       MouseDoubleClick="dataGrid_MouseDoubleClick_1" 
                   
                   >
+            <DataGrid.Effect>
+                <DropShadowEffect/>
+            </DataGrid.Effect>
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="#Producto" Binding="{Binding idProductos}" Width="auto"></DataGridTextColumn>
@@ -73,10 +75,21 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Content="Agregar" Foreground="Black" Margin="5,5,5,5" Name="btnAgregar" Height="30" Width="100" Click="btnAgregar_Click"  ></Button>
-            <Button Content="Eliminar" Foreground="Red"   Margin="5,6,7,5" Name="btnCancelar" Grid.Column="1" Width="100" Click="btnCancelar_Click_1" />
-            <Button Content="Actualizar" Margin="5,5,5,5" Name="btnActualizar" Grid.Column="2"  Height="30" Width="100"></Button>
-            <Button Content="Terminar Venta"  Foreground="Blue" Margin="5,6,9,5" Name="btnlimpiar" Grid.Column="3" Width="100" Click="btnlimpiar_Click"   />
+            <Button  Foreground="Black" Margin="5,5,5,5" Name="btnAgregar" Height="40" Width="50" Click="btnAgregar_Click" Background="#FF33CF2B"  >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="imagenes/Add-New.png"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button   Foreground="Red"    Margin="5,6,7,5" Name="btnCancelar" Grid.Column="1" Width="60" Click="btnCancelar_Click_1" Background="#FFB90C0C" >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="imagenes/Delete.png"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button Margin="5,6,9,5" Name="btnlimpiar" Grid.Column="3" Width="80" Click="btnlimpiar_Click" BorderBrush="#FFAA1414" Background="#FF0B0BD1" Foreground="#FFF50B0B"   >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="imagenes/Save.png"/>
+                </Button.OpacityMask>
+            </Button>
         </Grid   >
 
         <Menu IsMainMenu="True" Background="#FF2D2D30" BorderBrush="#FF2D2D30">
@@ -122,12 +135,16 @@
 
             </Grid.RowDefinitions>
             <Label Content="Fecha:" FontSize="20"  FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" ></Label>
-            <Label Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" Grid.Column="2" ></Label>
+            <Label Name="lblfecha" Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" Grid.Column="2" >
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
             <Label Content="IVA:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto"  ></Label>
-            <Label Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto" Grid.Column="2"  ></Label>
+            <Label Name="lbliva" Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto" Grid.Column="2"  ></Label>
 
             <Label Content="sub total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="auto" ></Label>
-            <Label Content="0.00" FontSize="25" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="200" Grid.Column="2" ></Label>
+            <Label Name="lblsubtol" Content="0.00" FontSize="25" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="200" Grid.Column="2" ></Label>
             <Label Content="Total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Black" Width="auto" ></Label>
             <Label Name="lbltotal" Content="0.00"  FontSize="40" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Red" Width="auto" Grid.Column="2" Background="Aqua"  ></Label>
             <Label Content="Cambio-->$"  FontSize="30" FontWeight="Bold"  Grid.Column="3" Grid.Row="1" ></Label>

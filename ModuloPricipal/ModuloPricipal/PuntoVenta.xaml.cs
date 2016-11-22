@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Threading;
 
 namespace ModuloPricipal
 {
@@ -31,8 +32,23 @@ namespace ModuloPricipal
             cb_produc.DisplayMemberPath = consulta.Tables["produc"].Columns["nombre"].ToString();
             cb_produc.SelectedValuePath = consulta.Tables["produc"].Columns["idProductos"].ToString();
             cb_produc.Focus();
+            reloj();
+           
             
         }
+        public void reloj() {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += tickeven;
+            timer.Start();
+           
+        }
+
+        private void tickeven(object sender, EventArgs e)
+        {
+            lblfecha.Content = DateTime.Now.ToString();
+        }
+
         public string conexion = "";
         DataSet consulta = new DataSet(); // tabla para llenar el combobox
         DataSet consultap = new DataSet();// para agregar los productos a la venta
@@ -123,17 +139,19 @@ namespace ModuloPricipal
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
         }
-        int dd,cc;
+        int dd,cc,iva;
         private void sumar()
         {
             try
             {
                 //consultarPro();
-               
-                    dd += Convert.ToInt32(((DataRowView)dataGrid.Items[cc]).Row[3]);
+                    iva+=  Convert.ToInt32(((DataRowView)dataGrid.Items[cc]).Row[6]);
+                dd += Convert.ToInt32(((DataRowView)dataGrid.Items[cc]).Row[3]);
                 cc += 1;
-
-                lbltotal.Content = dd.ToString();
+                lbliva.Content = iva.ToString();
+                lblsubtol.Content = dd.ToString();
+                lbltotal.Content = dd + iva;
+              
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
         }
@@ -164,11 +182,27 @@ namespace ModuloPricipal
         private void btnCancelar_Click_1(object sender, RoutedEventArgs e)
         {
             //dataGrid.Items.Remove(DeleteIndex);
-            consultap.Tables["productos"].Rows.RemoveAt(DeleteIndex);
-          dd-= Convert.ToInt32(((DataRowView)dataGrid.Items[DeleteIndex]).Row[3]);
-            c -= 1;
-            lbltotal.Content = dd.ToString();
-            dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
+            try
+            {
+                dd -= Convert.ToInt32(((DataRowView)dataGrid.Items[DeleteIndex]).Row[3]);
+               
+                iva -= Convert.ToInt32(((DataRowView)dataGrid.Items[DeleteIndex]).Row[6]);
+                cc -= 1;
+                lbliva.Content = iva.ToString();
+                lblsubtol.Content = dd.ToString();
+               
+                lbltotal.Content = (dd + iva).ToString();
+                consultap.Tables["productos"].Rows.RemoveAt(DeleteIndex);
+
+
+               
+                dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
+            }
+            catch (Exception) {
+                MessageBox.Show("seleccione un producto para Eliminar", "Mensaje");
+            }
+            
+           
         }
 
         private void btnlimpiar_Click(object sender, RoutedEventArgs e)
