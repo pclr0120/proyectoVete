@@ -9,7 +9,8 @@
      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         Title="Menu" Height="727.556" Background="#FF2D2D30" Width="1024" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid>
+    <Grid Background="#FF22226C">
+      
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="auto"/>
@@ -75,6 +76,12 @@
                 <DropShadowEffect/>
             </Controls:Tile.Effect>
             <Image Source="imagenes\Product.png" Height="122" Width="140"></Image>
+        </Controls:Tile>
+        <Controls:Tile Title="Cerrar" Click="btnSalir_Click" Grid.Row="3" Grid.Column="3"  Width="Auto" Height="130" Background="#FF6E2D2D"  TitleFontSize="20" Margin="3,2,4,6">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="imagenes\Logout.png" Height="122" Width="140"></Image>
         </Controls:Tile>
 
 

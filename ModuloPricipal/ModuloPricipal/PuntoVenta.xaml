@@ -47,7 +47,8 @@
                   VerticalAlignment="Top" Height="390" Width="629" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
                    CanUserDeleteRows="False"
                  FontSize="18"
-                  FontStyle="Italic" FontFamily="18"
+                  FontStyle="Oblique" FontFamily="18"
+                 
                      
                       MouseDoubleClick="dataGrid_MouseDoubleClick_1" 
                   
@@ -134,11 +135,9 @@
                 <RowDefinition Height="auto"/>
 
             </Grid.RowDefinitions>
-            <Label Content="Fecha:" FontSize="20"  FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" ></Label>
+            <Label  Content="Fecha:" FontSize="20"  FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" ></Label>
             <Label Name="lblfecha" Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" Grid.Column="2" >
-                <Label.Effect>
-                    <DropShadowEffect/>
-                </Label.Effect>
+                
             </Label>
             <Label Content="IVA:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto"  ></Label>
             <Label Name="lbliva" Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto" Grid.Column="2"  ></Label>
@@ -195,7 +194,7 @@
             <Label Content="Turno" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="2" Foreground="White" Width="auto" ></Label>
 
         </Grid>
-
-
+       
+        
     </Grid>
 </Window>

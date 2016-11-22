@@ -53,7 +53,7 @@ namespace ModuloPricipal
         DataSet consulta = new DataSet(); // tabla para llenar el combobox
         DataSet consultap = new DataSet();// para agregar los productos a la venta
         public List<string> miLista = new List<string>();
-
+        string valor;
         public DataSet consultarPro()
         {
             try
@@ -61,7 +61,7 @@ namespace ModuloPricipal
 
                 using (MySqlConnection conn = new MySqlConnection(conexion))
                 {
-                    string valor = cb_produc.SelectedValue.ToString();
+                     valor = cb_produc.SelectedValue.ToString();
                     int id = Convert.ToInt32(valor);
                     consulta = new DataSet();
                     MySqlCommand cmd = new MySqlCommand();
@@ -78,7 +78,7 @@ namespace ModuloPricipal
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
                     adaptador.Fill(consultap, "productos");
 
-                    miLista.Add(valor.ToString());
+                 
                 
                     return consultap;
 
@@ -128,7 +128,8 @@ namespace ModuloPricipal
             {
             
               
-                consultarPro();
+                
+              
                 dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
 
 
@@ -176,10 +177,11 @@ namespace ModuloPricipal
         private void dataGrid_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
             DeleteIndex = dataGrid.SelectedIndex;
-            MessageBox.Show(DeleteIndex.ToString());
+
+            
         }
 
-        private void btnCancelar_Click_1(object sender, RoutedEventArgs e)
+        public void btnCancelar_Click_1(object sender, RoutedEventArgs e)
         {
             //dataGrid.Items.Remove(DeleteIndex);
             try
@@ -197,6 +199,7 @@ namespace ModuloPricipal
 
                
                 dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
+                DeleteIndex = -1;
             }
             catch (Exception) {
                 MessageBox.Show("seleccione un producto para Eliminar", "Mensaje");

@@ -65,7 +65,7 @@ namespace ModuloPricipal
 
                         Menu m =  new Menu();
                         m.Show();
-                        this.Hide();
+                        this.Close();
 
                     }
                     else
