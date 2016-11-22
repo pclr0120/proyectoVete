@@ -47,21 +47,19 @@
 
         </Grid>
         <DataGrid x:Name="dataGrid"     HorizontalAlignment="Left" Margin="5,5,5,5"
-                  VerticalAlignment="Top" Height="390" Width="629" Grid.Row="3"  
+                  VerticalAlignment="Top" Height="390" Width="629" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
+                   CanUserDeleteRows="False"
                      
                       MouseDoubleClick="dataGrid_MouseDoubleClick_1" 
                   
                   >
             <DataGrid.Columns>
-                <!--<DataGridTextColumn Header="id" Binding="{Binding id_producto}" Width="auto"></DataGridTextColumn>-->
+
                 <DataGridTextColumn Header="#Producto" Binding="{Binding idProductos}" Width="auto"></DataGridTextColumn>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="auto" ></DataGridTextColumn>
-                <!--<DataGridTextColumn Header="Descripcion" Binding="{Binding descripcion}" Width="auto" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad}" Width="auto"></DataGridTextColumn>
-                -->
-                <!--<DataGridTextColumn Header="IVA" Binding="{Binding iva}" Width="auto"></DataGridTextColumn>-->
-                <!--
-                <DataGridTextColumn Header="Precio$" Binding="{Binding preci}" Width="auto"></DataGridTextColumn>-->
+                <DataGridTextColumn Header="IVA" Binding="{Binding iva}" Width="auto" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Precio$" Binding="{Binding precio}" Width="auto" ></DataGridTextColumn>
+
 
 
             </DataGrid.Columns>
@@ -78,7 +76,7 @@
             <Button Content="Agregar" Foreground="Black" Margin="5,5,5,5" Name="btnAgregar" Height="30" Width="100" Click="btnAgregar_Click"  ></Button>
             <Button Content="Eliminar" Foreground="Red"   Margin="5,6,7,5" Name="btnCancelar" Grid.Column="1" Width="100" Click="btnCancelar_Click_1" />
             <Button Content="Actualizar" Margin="5,5,5,5" Name="btnActualizar" Grid.Column="2"  Height="30" Width="100"></Button>
-            <Button Content="Terminar Venta"  Foreground="Blue" Margin="5,6,8,0" Name="btnlimpiar" Grid.Column="3" Width="100" Height="30" VerticalAlignment="Top"   />
+            <Button Content="Terminar Venta"  Foreground="Blue" Margin="5,6,9,5" Name="btnlimpiar" Grid.Column="3" Width="100" Click="btnlimpiar_Click"   />
         </Grid   >
 
         <Menu IsMainMenu="True" Background="#FF2D2D30" BorderBrush="#FF2D2D30">

@@ -123,16 +123,16 @@ namespace ModuloPricipal
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
         }
-        int dd;
+        int dd,cc;
         private void sumar()
         {
             try
             {
                 //consultarPro();
-                for (int i = 0; i < dataGrid.Items.Count; i++)
-                {
-                    dd = dd + Convert.ToInt32(((DataRowView)dataGrid.Items[i]).Row[5]);
-                }
+               
+                    dd += Convert.ToInt32(((DataRowView)dataGrid.Items[cc]).Row[3]);
+                cc += 1;
+
                 lbltotal.Content = dd.ToString();
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
@@ -141,6 +141,7 @@ namespace ModuloPricipal
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             Addventa();
+            sumar();
         }
         int c = 0;
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
@@ -163,9 +164,18 @@ namespace ModuloPricipal
         private void btnCancelar_Click_1(object sender, RoutedEventArgs e)
         {
             //dataGrid.Items.Remove(DeleteIndex);
-            consultap.Tables["productos"].Rows.RemoveAt(2);
-            dataGrid.ItemsSource = null;
+            consultap.Tables["productos"].Rows.RemoveAt(DeleteIndex);
+          dd-= Convert.ToInt32(((DataRowView)dataGrid.Items[DeleteIndex]).Row[3]);
+            c -= 1;
+            lbltotal.Content = dd.ToString();
             dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
         }
+
+        private void btnlimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+      
     }
 }
