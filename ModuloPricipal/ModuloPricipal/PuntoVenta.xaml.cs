@@ -31,11 +31,12 @@ namespace ModuloPricipal
             cb_produc.DisplayMemberPath = consulta.Tables["produc"].Columns["nombre"].ToString();
             cb_produc.SelectedValuePath = consulta.Tables["produc"].Columns["idProductos"].ToString();
             cb_produc.Focus();
+            
         }
         public string conexion = "";
         DataSet consulta = new DataSet(); // tabla para llenar el combobox
         DataSet consultap = new DataSet();// para agregar los productos a la venta
-        public List<DataSet> miLista = new List<DataSet>();
+        public List<string> miLista = new List<string>();
 
         public DataSet consultarPro()
         {
@@ -45,7 +46,6 @@ namespace ModuloPricipal
                 using (MySqlConnection conn = new MySqlConnection(conexion))
                 {
                     string valor = cb_produc.SelectedValue.ToString();
-
                     int id = Convert.ToInt32(valor);
                     consulta = new DataSet();
                     MySqlCommand cmd = new MySqlCommand();
@@ -60,9 +60,10 @@ namespace ModuloPricipal
                     cmd.Parameters.Add(new MySqlParameter("_id", id));
                     conn.Open();
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
-                    adaptador.Fill(consultap, "produc3");
-                   
-                    miLista.Add(consultap);
+                    adaptador.Fill(consultap, "productos");
+
+                    miLista.Add(valor.ToString());
+                
                     return consultap;
 
 
@@ -77,7 +78,7 @@ namespace ModuloPricipal
             }
         }
 
-
+        
         public DataSet consultarCombobox()
         {
             try
@@ -91,8 +92,6 @@ namespace ModuloPricipal
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "ComboboxProducto";
                     cmd.Parameters.Clear();
-
-
                     conn.Open();
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
                     adaptador.Fill(consulta, "produc");
@@ -111,12 +110,14 @@ namespace ModuloPricipal
         {
             try
             {
+            
+              
                 consultarPro();
-               
-               
-                this.dataGrid.ItemsSource = miLista;
-               
-               
+                dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
+
+                //this.dataGrid.ItemsSource = miLista;
+
+
 
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
@@ -139,6 +140,24 @@ namespace ModuloPricipal
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             Addventa();
+        }
+        int c = 0;
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            
+           MessageBox.Show( miLista[c].ToString());
+            c += 1;
+        }
+        int DeleteIndex;
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DeleteIndex = dataGrid.SelectedIndex;
+            MessageBox.Show(DeleteIndex.ToString());
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.Items.Remove(DeleteIndex);
         }
     }
 }

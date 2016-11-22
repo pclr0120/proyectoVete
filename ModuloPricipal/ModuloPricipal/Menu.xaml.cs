@@ -25,5 +25,10 @@ namespace ModuloPricipal
         {
             InitializeComponent();
         }
+        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            PuntoVenta p = new PuntoVenta();
+            p.Show();
+        }
     }
 }
