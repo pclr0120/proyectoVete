@@ -1,0 +1,19 @@
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\bin\Debug\Modulo_Mascota.exe.config
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\bin\Debug\Modulo_Mascota.exe
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\bin\Debug\Modulo_Mascota.pdb
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.csprojResolveAssemblyReference.cache
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\MainWindow.g.cs
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\App.g.cs
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota_MarkupCompile.cache
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota_MarkupCompile.lref
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\MainWindow.baml
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.g.resources
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.Properties.Resources.resources
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.csproj.GenerateResource.Cache
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.exe
+c:\users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.pdb
+C:\Users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\bin\Debug\MySql.Data.dll
+C:\Users\angel_000\documents\visual studio 2015\Projects\Modulo_Mascota\Modulo_Mascota\bin\Debug\MySql.Data.xml
+C:\ProyectoVeterinaria\Modulo_Mascota\Modulo_Mascota\bin\Debug\Modulo_Mascota.exe.config
+C:\ProyectoVeterinaria\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.exe
+C:\ProyectoVeterinaria\Modulo_Mascota\Modulo_Mascota\obj\Debug\Modulo_Mascota.pdb
