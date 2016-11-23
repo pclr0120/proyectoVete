@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:modulo4"
         mc:Ignorable="d"
-        Title="Clientez" Height="350" Width="525">
-    <Grid>
-        
+        Title="Clientes" Height="444.961" Width="701.358">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+    </Window.Background>
+    <Grid Margin="0,0,-8,0" Loaded="Grid_Loaded">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Height="166" Width="668"/>
+        <Label x:Name="label" Content="Nombre:" HorizontalAlignment="Left" Margin="55,27,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Apellido Paterno:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Apellido Materno:" HorizontalAlignment="Left" Margin="6,121,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Telefono:" HorizontalAlignment="Left" Margin="399,27,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Email:" HorizontalAlignment="Left" Margin="416,75,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Direccion:" HorizontalAlignment="Left" Margin="395,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Status:" HorizontalAlignment="Left" Margin="412,163,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="151,30,0,0" TextWrapping="Wrap" Text="nombre" VerticalAlignment="Top" Width="204" GotFocus="textBox_GotFocus"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="151,79,0,0" TextWrapping="Wrap" Text="apellido paterno" VerticalAlignment="Top" Width="204" GotFocus="textBox1_GotFocus"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="151,124,0,0" TextWrapping="Wrap" Text="apellido materno" VerticalAlignment="Top" Width="204" GotFocus="textBox2_GotFocus"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="500,30,0,0" TextWrapping="Wrap" Text="telefono" VerticalAlignment="Top" Width="180" GotFocus="textBox3_GotFocus"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="500,79,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="180" GotFocus="textBox4_GotFocus"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="500,125,0,0" TextWrapping="Wrap" Text="direccion" VerticalAlignment="Top" Width="180" GotFocus="textBox5_GotFocus"/>
+        <CheckBox x:Name="checkBox" Content="Vigente" HorizontalAlignment="Left" Margin="500,169,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <Button x:Name="button" Content="Agregar" HorizontalAlignment="Left" Margin="443,213,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button_Copy" Content="Actualizar" HorizontalAlignment="Left" Margin="523,213,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button_Copy1" Content="Eliminar" HorizontalAlignment="Left" Margin="603,213,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>
