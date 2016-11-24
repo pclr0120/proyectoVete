@@ -227,7 +227,7 @@ namespace ModuloPricipal
                     {
                         _id = Convert.ToInt32(((DataRowView)dataGrid.Items[i]).Row["idProductos"].ToString());
                         _iva = Convert.ToDouble(((DataRowView)dataGrid.Items[i]).Row["iva"].ToString());
-                        _nombre = ((DataRowView)dataGrid.Items[i]).Row["nombre"].ToString();
+                        
                         _precio = Convert.ToDouble(((DataRowView)dataGrid.Items[i]).Row["precio"].ToString());
 
                         cmd.Connection = conn;
@@ -239,11 +239,17 @@ namespace ModuloPricipal
                         cmd.Parameters.Add(new MySqlParameter("_id", _id));
                         cmd.Parameters.Add(new MySqlParameter("_iva", _iva));
                         cmd.Parameters.Add(new MySqlParameter("_precio", _precio));
-                        conn.Close();
+                        cmd.ExecuteNonQuery();
                         
-                        MessageBox.Show("Venta registrada", "mensaje");
+                  
+                        conn.Close();
+                   
+                       
 
                     }
+
+                    MessageBox.Show("Venta registrada", "mensaje");
+                    venta += 1;
                 }
             }
             catch (Exception e)
