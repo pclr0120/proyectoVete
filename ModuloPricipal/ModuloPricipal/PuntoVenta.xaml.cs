@@ -33,7 +33,7 @@ namespace ModuloPricipal
             cb_produc.SelectedValuePath = consulta.Tables["produc"].Columns["idProductos"].ToString();
             cb_produc.Focus();
             reloj();
-            venta = 1;
+          
             
         }
         int venta;
@@ -213,36 +213,97 @@ namespace ModuloPricipal
         double _iva;
         double _precio;
         string _nombre;
-        
-        public void VentaFinalizada() {
-           
-                MySqlCommand cmd = new MySqlCommand();
+
+        public void registrarVentamaestra() {
+
+            MySqlCommand cmd = new MySqlCommand();
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(conexion))
                 {
-                    
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+
+                    cmd.Connection = conn;
+                    conn.Open();
+                    MySqlTransaction tranOperaciones = null;
+                    tranOperaciones = cmd.Connection.BeginTransaction();
+                    cmd.Transaction = tranOperaciones;
+                    try
+                    {
+
+
+
+
+                        cmd.CommandText = "savevVetaMaestra";
+                        cmd.Parameters.Clear();
+                      
+                        cmd.Parameters.Add(new MySqlParameter("_subtotal", Convert.ToDouble(lblsubtol.Content)));
+                        cmd.Parameters.Add(new MySqlParameter("_iva", Convert.ToDouble(lbliva.Content)));
+                        cmd.Parameters.Add(new MySqlParameter("_total", Convert.ToDouble(lbltotal.Content)));
+                        venta=Convert.ToInt32(cmd.ExecuteScalar());
+                        tranOperaciones.Commit();
+                        conn.Close();
+                    }
+                    catch
+                    {
+                        tranOperaciones.Rollback();
+                    }
+
+
+                }
+
+
+
+                MessageBox.Show("Venta registrada", "mensaje");
+                venta += 1;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("haf");
+            }
+
+            //==============
+        }
+        public void VentaFinalizada() {
+
+
+            registrarVentamaestra();
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     for (int i = 0; i < dataGrid.Items.Count; i++)
                     {
-                        _id = Convert.ToInt32(((DataRowView)dataGrid.Items[i]).Row["idProductos"].ToString());
-                        _iva = Convert.ToDouble(((DataRowView)dataGrid.Items[i]).Row["iva"].ToString());
-                        
-                        _precio = Convert.ToDouble(((DataRowView)dataGrid.Items[i]).Row["precio"].ToString());
-
                         cmd.Connection = conn;
                         conn.Open();
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = "RegistrarVenta";
-                        cmd.Parameters.Clear();
-                        cmd.Parameters.Add(new MySqlParameter("_venta", venta));
-                        cmd.Parameters.Add(new MySqlParameter("_id", _id));
-                        cmd.Parameters.Add(new MySqlParameter("_iva", _iva));
-                        cmd.Parameters.Add(new MySqlParameter("_precio", _precio));
-                        cmd.ExecuteNonQuery();
-                        
-                  
-                        conn.Close();
+                        MySqlTransaction tranOperaciones = null;
+                        tranOperaciones = cmd.Connection.BeginTransaction();
+                        cmd.Transaction = tranOperaciones;
+                        try
+                        {
+                            _id = Convert.ToInt32(((DataRowView)dataGrid.Items[i]).Row["idProductos"].ToString());
+                            _iva = Convert.ToDouble(((DataRowView)dataGrid.Items[i]).Row["iva"].ToString());
+
+                            _precio = Convert.ToDouble(((DataRowView)dataGrid.Items[i]).Row["precio"].ToString());
+
+                           
+
+                            cmd.CommandText = "RegistrarVenta";
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.Add(new MySqlParameter("_venta", venta));
+                            cmd.Parameters.Add(new MySqlParameter("_id", _id));
+                            cmd.Parameters.Add(new MySqlParameter("_iva", _iva));
+                            cmd.Parameters.Add(new MySqlParameter("_precio", _precio));
+                            cmd.ExecuteNonQuery();
+                            tranOperaciones.Commit();
+                            conn.Close();
+                        }
+                        catch { tranOperaciones.Rollback(); }
                    
                        
 
