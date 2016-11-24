@@ -48,8 +48,6 @@
                    CanUserDeleteRows="False"
                  FontSize="18"
                   FontStyle="Oblique" FontFamily="18"
-                 
-                     
                       MouseDoubleClick="dataGrid_MouseDoubleClick_1" 
                   
                   >

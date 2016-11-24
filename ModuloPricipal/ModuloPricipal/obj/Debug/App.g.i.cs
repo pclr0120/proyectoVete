@@ -54,7 +54,7 @@ namespace ModuloPricipal {
             _contentLoaded = true;
             
             #line 5 "..\..\App.xaml"
-            this.StartupUri = new System.Uri("Login.xaml", System.UriKind.Relative);
+            this.StartupUri = new System.Uri("PuntoVenta.xaml", System.UriKind.Relative);
             
             #line default
             #line hidden
