@@ -92,6 +92,7 @@ namespace ModuloPricipal
 
         private void txt_pass_KeyDown_1(object sender, KeyEventArgs e)
         {
+
             if (Key.Enter == e.Key)
             {
                 if (txt_pass.Password != "" && txt_user.Text != "")

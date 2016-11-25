@@ -4,12 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModuloPricipal"
+         KeyDown="VentaFinalizada"
+       
+         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        
         mc:Ignorable="d"
-           Title="Punto de Venta" BorderBrush="#FF2D2D30"  WindowStyle="ToolWindow" Background="#FF2D2D30" Height="700" Width="1500" WindowState="Maximized"  >
+           Title="Punto de Venta" BorderBrush="#FF2D2D30"  WindowStyle="ToolWindow" Background="#FF2D2D30" Height="802" Width="1403.3" WindowState="Maximized"  >
     <Grid Background="#FF2D2D30">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto" MinWidth="824"/>
+            <ColumnDefinition Width="336"/>
+            <ColumnDefinition Width="468"/>
+
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -43,8 +50,8 @@
 
 
         </Grid>
-        <DataGrid x:Name="dataGrid"     HorizontalAlignment="Left" Margin="5,5,5,5"
-                  VerticalAlignment="Top" Height="390" Width="629" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
+        <DataGrid x:Name="dataGrid"     HorizontalAlignment="Left" Margin="5,5,0,0"
+                  VerticalAlignment="Top" Height="390" Width="809" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
                    CanUserDeleteRows="False"
                  FontSize="18"
                   FontStyle="Oblique" FontFamily="18"
@@ -66,7 +73,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+        <Grid Grid.Row="2" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -79,16 +86,12 @@
                     <ImageBrush ImageSource="imagenes/Add-New.png"/>
                 </Button.OpacityMask>
             </Button>
-            <Button   Foreground="Red"    Margin="5,6,7,5" Name="btnCancelar" Grid.Column="1" Width="60" Click="btnCancelar_Click_1" Background="#FFB90C0C" >
+            <Button   Foreground="Red"    Margin="5,6,7,5" Name="btnCancelar" Grid.Column="1" Width="60"  Background="#FFB90C0C" >
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="imagenes/Delete.png"/>
                 </Button.OpacityMask>
             </Button>
-            <Button Margin="5,6,9,5" Name="btnlimpiar" Grid.Column="3" Width="80" Click="btnlimpiar_Click" BorderBrush="#FFAA1414" Background="#FF0B0BD1" Foreground="#FFF50B0B"   >
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="imagenes/Save.png"/>
-                </Button.OpacityMask>
-            </Button>
+            
         </Grid   >
 
         <Menu IsMainMenu="True" Background="#FF2D2D30" BorderBrush="#FF2D2D30">
@@ -114,13 +117,12 @@
             </MenuItem>
 
         </Menu>
-        <Grid Grid.Row="3" Grid.Column="1" Background="#FFF0F0F0" Height="390" Width="700" Margin="5,5,5,5"   >
+        <Grid Grid.Row="3" Grid.Column="1" Background="#FFF0F0F0" Margin="10,5,0,0"    >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto" ></ColumnDefinition>
+
 
 
             </Grid.ColumnDefinitions>
@@ -133,29 +135,28 @@
                 <RowDefinition Height="auto"/>
 
             </Grid.RowDefinitions>
-            <Label  Content="Fecha:" FontSize="20"  FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" ></Label>
-            <Label Name="lblfecha" Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="auto" Grid.Column="2" >
-                
+            <Label  Content="Fecha:" FontSize="20"  FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="69" ></Label>
+            <Label Name="lblfecha" Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="102" Grid.Column="2" >
+
             </Label>
-            <Label Content="IVA:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto"  ></Label>
-            <Label Name="lbliva" Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="auto" Grid.Column="2"  ></Label>
+            <Label Content="IVA:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="48"  ></Label>
+            <Label Name="lbliva" Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="50" Grid.Column="2"  ></Label>
 
-            <Label Content="sub total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="auto" ></Label>
+            <Label Content="sub total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="143" ></Label>
             <Label Name="lblsubtol" Content="0.00" FontSize="25" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="200" Grid.Column="2" ></Label>
-            <Label Content="Total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Black" Width="auto" ></Label>
-            <Label Name="lbltotal" Content="0.00"  FontSize="40" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Red" Width="auto" Grid.Column="2" Background="Aqua"  ></Label>
-            <Label Content="Cambio-->$"  FontSize="30" FontWeight="Bold"  Grid.Column="3" Grid.Row="1" ></Label>
-            <Label Content="0.00"  FontSize="30" FontWeight="Bold"  Grid.Column="4" Grid.Row="1" ></Label>
+            <Label Content="Total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Black" Width="88" ></Label>
+            <Label Name="lbltotal" Content="0.00"  FontSize="40" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Red" Width="90" Grid.Column="2" Background="Aqua"  ></Label>
 
         </Grid>
-        <Grid Grid.Row="4" Grid.Column="0" Margin="5,5,5,5"    >
+
+        <Grid Grid.Row="3" Grid.Column="2"  >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"/>
+
 
 
             </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -164,35 +165,41 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
 
-            </Grid.RowDefinitions>
-            <Label Content="PROMOCIONES:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Red" Width="auto" ></Label>
-            <Label Content="PROMOCIONES" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Red" Width="auto" ></Label>
-
-        </Grid>
-        <Grid Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"    >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-
-
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
 
             </Grid.RowDefinitions>
-            <Label Content="Usuario:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="White" Width="auto" ></Label>
-            <Label Content="turno:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="White" Width="auto" ></Label>
-            <Label Content="Usuario:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" Foreground="White" Width="auto" ></Label>
-            <Label Content="Turno" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="2" Foreground="White" Width="auto" ></Label>
 
+            <Controls:Tile   Grid.Row="0" Grid.Column="0"  Width="150"  Height="50" Background="BlueViolet" Title="Finalizar Venta F1" TitleFontSize="12">
+                <Controls:Tile.Effect>
+                    <DropShadowEffect/>
+                </Controls:Tile.Effect>
+                <Image Source="imagenes\PuntoVenta.png" Height="50" Width="50"></Image>
+            </Controls:Tile>
+            <Controls:Tile  Grid.Row="1" Grid.Column="0"  Width="150"  Height="50" Background="Orange" Title="Eliminar producto F2" TitleFontSize="14" >
+                <Controls:Tile.Effect>
+                    <DropShadowEffect/>
+                </Controls:Tile.Effect>
+                <Image Source="imagenes\PuntoVenta.png" Height="50" Width="50"></Image>
+            </Controls:Tile>
+            <Controls:Tile  Grid.Row="2" Grid.Column="0"  Width="150"  Height="50" Background="Red" Title="Cancelar Vetan F3" TitleFontSize="12" >
+                <Controls:Tile.Effect>
+                    <DropShadowEffect/>
+                </Controls:Tile.Effect>
+                <Image Source="imagenes\PuntoVenta.png" Height="50" Width="50"></Image>
+            </Controls:Tile>
+            <Controls:Tile  Grid.Row="3" Grid.Column="0"  Width="150"  Height="50" Background="Red" Title="Cancelar Vetan F4" TitleFontSize="12" >
+                <Controls:Tile.Effect>
+                    <DropShadowEffect/>
+                </Controls:Tile.Effect>
+                <Image Source="imagenes\PuntoVenta.png" Height="50" Width="50"></Image>
+            </Controls:Tile>
+            <Controls:Tile  Grid.Row="4" Grid.Column="0"  Width="150"  Height="50" Background="Red" Title="Cancelar Vetan F3" TitleFontSize="12" >
+                <Controls:Tile.Effect>
+                    <DropShadowEffect/>
+                </Controls:Tile.Effect>
+                <Image Source="imagenes\PuntoVenta.png" Height="50" Width="50"></Image>
+            </Controls:Tile>
         </Grid>
-       
-        
+
+
     </Grid>
 </Window>
