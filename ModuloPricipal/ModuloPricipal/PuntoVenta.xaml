@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModuloPricipal"
-         KeyDown="VentaFinalizada"
+         KeyDown="EvaluerTecla"
        
          xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
@@ -54,9 +54,7 @@
                   VerticalAlignment="Top" Height="390" Width="809" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
                    CanUserDeleteRows="False"
                  FontSize="18"
-                  FontStyle="Oblique" FontFamily="18"
-                      MouseDoubleClick="dataGrid_MouseDoubleClick_1" 
-                  
+                  FontStyle="Oblique" FontFamily="18" MouseDoubleClick="dataGrid_MouseDoubleClick"
                   >
             <DataGrid.Effect>
                 <DropShadowEffect/>
@@ -86,12 +84,7 @@
                     <ImageBrush ImageSource="imagenes/Add-New.png"/>
                 </Button.OpacityMask>
             </Button>
-            <Button   Foreground="Red"    Margin="5,6,7,5" Name="btnCancelar" Grid.Column="1" Width="60"  Background="#FFB90C0C" >
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="imagenes/Delete.png"/>
-                </Button.OpacityMask>
-            </Button>
-            
+
         </Grid   >
 
         <Menu IsMainMenu="True" Background="#FF2D2D30" BorderBrush="#FF2D2D30">

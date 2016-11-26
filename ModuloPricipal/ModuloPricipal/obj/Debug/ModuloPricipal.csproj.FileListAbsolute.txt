@@ -68,3 +68,5 @@ C:\Users\PCLR\Source\Repos\proyectovete\ModuloPricipal\ModuloPricipal\obj\Debug\
 C:\Users\PCLR\Source\Repos\proyectovete\ModuloPricipal\ModuloPricipal\obj\Debug\ModuloPricipal.g.resources
 C:\Users\PCLR\Source\Repos\proyectovete\ModuloPricipal\ModuloPricipal\obj\Debug\ModuloPricipal.Properties.Resources.resources
 C:\Users\PCLR\Source\Repos\proyectovete\ModuloPricipal\ModuloPricipal\obj\Debug\ModuloPricipal.csproj.GenerateResource.Cache
+C:\Users\PCLR\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\DialogoEliminarProducto.g.cs
+C:\Users\PCLR\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\DialogoEliminarProducto.baml

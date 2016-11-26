@@ -20,7 +20,7 @@ namespace ModuloPricipal
         public PuntoVenta()
         {
             InitializeComponent();
-            InitializeComponent();
+            
             conexion = "server=localhost;user id=root;password=pclr0120;database=bdvt;";
             consultarCombobox();
             cb_produc.ItemsSource = consulta.Tables["produc"].DefaultView;
@@ -33,10 +33,20 @@ namespace ModuloPricipal
 
 
         }
-
-
-       
+        int _id;
+        double _iva;
+        double _precio;
+        string _nombre;
+        string p;
+        public string conexion = "";
+        DataSet consulta = new DataSet(); // tabla para llenar el combobox
+        DataSet consultap = new DataSet();// para agregar los productos a la venta
+        public List<string> miLista = new List<string>();
+        string valor;
+        int c = 0;
         int venta;
+        int dd, cc, iva;
+      
         public void reloj() {
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -52,11 +62,7 @@ namespace ModuloPricipal
             lblfecha.Content = DateTime.Now.ToString();
         }
 
-        public string conexion = "";
-        DataSet consulta = new DataSet(); // tabla para llenar el combobox
-        DataSet consultap = new DataSet();// para agregar los productos a la venta
-        public List<string> miLista = new List<string>();
-        string valor;
+      
         public DataSet consultarPro()
         {
             try
@@ -122,7 +128,7 @@ namespace ModuloPricipal
                 return new DataSet();
             }
         }
-        string p;
+       
         private void Addventa()
         {
             try
@@ -141,7 +147,7 @@ namespace ModuloPricipal
             }
             catch (Exception e) { MessageBox.Show("Consulte a su Administrador:" + e, "Mensaje de Error"); }
         }
-        int dd,cc,iva;
+       
         private void sumar()
         {
             try
@@ -163,25 +169,36 @@ namespace ModuloPricipal
             Addventa();
             sumar();
         }
-        int c = 0;
+    
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
         {
             
            MessageBox.Show( miLista[c].ToString());
             c += 1;
         }
-        int DeleteIndex;
 
 
-      
 
-        private void dataGrid_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        int NumeroRegistro;
+
+   
+        public void EvaluerTecla(object sender, KeyEventArgs e)
         {
-            DeleteIndex = dataGrid.SelectedIndex;
+            if (Key.F1 == e.Key && dataGrid.Items.Count > 0)
+            {
+                VentaFinalizada();
+            }
+          
+            if (Key.F2==e.Key && dataGrid.Items.Count > 0) {
 
-            
+                EliminarProducto();
+              
+               
+               
+              
+            }
+
         }
-
         public void EliminarProducto()
         {
             //int valor;
@@ -189,21 +206,22 @@ namespace ModuloPricipal
             //dataGrid.Items.Remove(DeleteIndex);
             try
             {
-                dd -= Convert.ToInt32(((DataRowView)dataGrid.Items[DeleteIndex]).Row[3]);
-               
-                iva -= Convert.ToInt32(((DataRowView)dataGrid.Items[DeleteIndex]).Row[6]);
+                dd -= Convert.ToInt32(((DataRowView)dataGrid.Items[NumeroRegistro]).Row[3]);
+
+                iva -= Convert.ToInt32(((DataRowView)dataGrid.Items[NumeroRegistro]).Row[6]);
                 cc -= 1;
                 lbliva.Content = iva.ToString();
                 lblsubtol.Content = dd.ToString();
                
                 lbltotal.Content = (dd + iva).ToString();
-                consultap.Tables["productos"].Rows.RemoveAt(DeleteIndex);
+                consultap.Tables["productos"].Rows.RemoveAt(NumeroRegistro);
                 
 
 
                
                 dataGrid.ItemsSource = consultap.Tables["productos"].DefaultView;
-                DeleteIndex = -1;
+                NumeroRegistro = -1;
+                MessageBox.Show("Eliminado", "Mensaje");
             }
             catch (Exception) {
                 MessageBox.Show("seleccione un producto para Eliminar", "Mensaje");
@@ -211,10 +229,12 @@ namespace ModuloPricipal
             
            
         }
-        int _id;
-        double _iva;
-        double _precio;
-        string _nombre;
+
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            NumeroRegistro = dataGrid.SelectedIndex;
+            
+        }
 
         public void registrarVentamaestra() {
 
@@ -268,10 +288,9 @@ namespace ModuloPricipal
 
             //==============
         }
-        public void VentaFinalizada(object sender, KeyEventArgs e) {
+        public void VentaFinalizada() {
 
-            if (Key.F1 == e.Key && dataGrid.Items.Count > 0)
-            {
+          
 
 
                 registrarVentamaestra();
@@ -323,11 +342,7 @@ namespace ModuloPricipal
                     MessageBox.Show("Erro: no se registro la venta:" + a + ", consulte con su admin ", "Mensaje de Error");
                 }
 
-            }
-            else {
-
-                MessageBox.Show("Capture un venta","Mensaje");
-            }
+           
 
         }
     
