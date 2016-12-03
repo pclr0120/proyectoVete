@@ -29,15 +29,15 @@ namespace ModuloPricipal
            
         }
 
-       
 
-       
+
+        public int valor;
         public void numeroRegistro(object sender, KeyEventArgs e)
         {
 
             if (Key.F1 == e.Key && txtRegistro.Text!="" ) {
 
-              
+                valor = Convert.ToInt32(txtRegistro.Text);
                 this.Close();
             }
 

@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModuloPricipal"
          KeyDown="EvaluerTecla"
+         WindowStyle="None"
+        ResizeMode="NoResize"
        
          xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        
+       
         mc:Ignorable="d"
-           Title="Punto de Venta" BorderBrush="#FF2D2D30"  WindowStyle="ToolWindow" Background="#FF2D2D30" Height="802" Width="1403.3" WindowState="Maximized"  >
+           Title="Punto de Venta" BorderBrush="#FF2D2D30"   Background="#FF2D2D30" Height="802" Width="1403.3" WindowState="Maximized"  >
     <Grid Background="#FF2D2D30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" MinWidth="824"/>
-            <ColumnDefinition Width="336"/>
-            <ColumnDefinition Width="468"/>
+            <ColumnDefinition Width="406"/>
+            <ColumnDefinition Width="398"/>
 
         </Grid.ColumnDefinitions>
 
@@ -50,21 +52,23 @@
 
 
         </Grid>
-        <DataGrid x:Name="dataGrid"     HorizontalAlignment="Left" Margin="5,5,0,0"
-                  VerticalAlignment="Top" Height="390" Width="809" Grid.Row="3"  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
+        <DataGrid x:Name="dataGrid"     HorizontalAlignment="Left" Margin="10,0,0,0"
+                  VerticalAlignment="Top" Height="390" Width="804" Grid.Row="3"  
+                  IsReadOnly="True" AutoGenerateColumns="False"  CanUserAddRows="False"  
                    CanUserDeleteRows="False"
                  FontSize="18"
+                  
+                ItemsSource="{Binding lista}"
                   FontStyle="Oblique" FontFamily="18" MouseDoubleClick="dataGrid_MouseDoubleClick"
                   >
             <DataGrid.Effect>
                 <DropShadowEffect/>
             </DataGrid.Effect>
             <DataGrid.Columns>
-
-                <DataGridTextColumn Header="#Producto" Binding="{Binding idProductos}" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="auto" ></DataGridTextColumn>
-                <DataGridTextColumn Header="IVA" Binding="{Binding iva}" Width="auto" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Precio$" Binding="{Binding precio}" Width="auto" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Registro" Binding="{Binding Registro1}" Width="auto" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="auto" ></DataGridTextColumn>
+                <DataGridTextColumn Header="IVA" Binding="{Binding Iva}" Width="auto" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Precio$" Binding="{Binding Precio}" Width="auto" ></DataGridTextColumn>
 
 
 
@@ -129,16 +133,16 @@
 
             </Grid.RowDefinitions>
             <Label  Content="Fecha:" FontSize="20"  FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="69" ></Label>
-            <Label Name="lblfecha" Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black" Width="102" Grid.Column="2" >
+            <Label Name="lblfecha" Content="00/00/00:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="1" Foreground="Black"  Grid.Column="2" >
 
             </Label>
-            <Label Content="IVA:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="48"  ></Label>
-            <Label Name="lbliva" Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black" Width="50" Grid.Column="2"  ></Label>
+            <Label Content="IVA:" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black"  ></Label>
+            <Label Name="lbliva" Content="0.00" FontSize="20" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="2" Foreground="Black"  Grid.Column="2"  ></Label>
 
             <Label Content="sub total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="143" ></Label>
             <Label Name="lblsubtol" Content="0.00" FontSize="25" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="3" Foreground="Black" Width="200" Grid.Column="2" ></Label>
             <Label Content="Total:" FontSize="30" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Black" Width="88" ></Label>
-            <Label Name="lbltotal" Content="0.00"  FontSize="40" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Red" Width="90" Grid.Column="2" Background="Aqua"  ></Label>
+            <Label Name="lbltotal" Content="0.00"  FontSize="40" FontWeight="Bold" Margin="5,5,0,5" HorizontalAlignment="Left" Grid.Row="5" Foreground="Red"  Grid.Column="2" Background="Aqua"  ></Label>
 
         </Grid>
 
