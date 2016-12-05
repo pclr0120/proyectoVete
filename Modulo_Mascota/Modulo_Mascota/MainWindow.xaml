@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Modulo_Mascota"
        
         mc:Ignorable="d"
-        Title="Registro Mascota>>>" Height="670.217" Width="676.667" Foreground="#FF8FE66E" Background="#FF8FE66E">
+        Title="Registro Mascota>>>" Height="670.217" Width="862.667" Foreground="#FF8FE66E" Background="#FF8FE66E">
    
     <Window.Resources>
         <SolidColorBrush x:Key="Brush1" Color="White"/>
@@ -25,20 +25,20 @@
         <Label x:Name="lblidMascota_Copy3" Content="Peso:" HorizontalAlignment="Left" Margin="96,290,0,0" VerticalAlignment="Top" Width="142" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
         <Label x:Name="lblidMascota_Copy5" Content="Señas Particulares:" HorizontalAlignment="Left" Margin="90,424,0,0" VerticalAlignment="Top" Width="132" Height="24" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
         <Label x:Name="lblidMascota_Copy6" Content="Fecha Nacimiento:" HorizontalAlignment="Left" Margin="90,468,0,0" VerticalAlignment="Top" Width="132" Height="24" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="20" Margin="27,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
-        <TextBox x:Name="txtSparti" HorizontalAlignment="Left" Height="20" Margin="93,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Grid.Column="1"/>
-        <TextBox x:Name="txtPeso" HorizontalAlignment="Left" Height="20" Margin="27,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
-        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="20" Margin="27,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
-        <TextBox x:Name="txtRaza" HorizontalAlignment="Left" Height="20" Margin="27,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
-        <TextBox x:Name="txtEspecie" HorizontalAlignment="Left" Height="20" Margin="27,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="txtNombre" TabIndex="2" HorizontalAlignment="Left" Height="20" Margin="27,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="txtSparti" HorizontalAlignment="Left" TabIndex="9" Height="20" Margin="93,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Grid.Column="1"/>
+        <TextBox x:Name="txtPeso" TabIndex="6" HorizontalAlignment="Left" Height="20" Margin="27,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="txtColor" TabIndex="5" HorizontalAlignment="Left" Height="20" Margin="27,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="txtRaza" TabIndex="4" HorizontalAlignment="Left" Height="20" Margin="27,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+        <TextBox x:Name="txtEspecie" TabIndex="3" HorizontalAlignment="Left" Height="20" Margin="27,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
         <Button x:Name="button" Content="Registrar Mascota&gt;&gt;&gt;" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="328,550,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
         <Button x:Name="button_Copy" Content="Cancelar&gt;&gt;&gt;" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="328,592,0,0" VerticalAlignment="Top" Width="128" Click="button_Copy_Click"/>
-        <DatePicker x:Name="dtpFechaNacimiento" HorizontalAlignment="Left" Height="26" Margin="93,466,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1"/>
+        <DatePicker x:Name="dtpFechaNacimiento" TabIndex="10" HorizontalAlignment="Left" Height="26" Margin="93,466,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1"/>
         <Label x:Name="lblidMascota_Copy4" Content="ID-Cliente:" HorizontalAlignment="Left" Margin="96,66,0,0" VerticalAlignment="Top" Width="132" Height="34" FontFamily="Tahoma" FontSize="14" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtCliente" HorizontalAlignment="Left" Height="20" Margin="27,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" Grid.Column="1"/>
+        <TextBox x:Name="txtCliente" TabIndex="1" HorizontalAlignment="Left" Height="20" Margin="27,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" Grid.Column="1"/>
         <GroupBox x:Name="groupBox" Grid.ColumnSpan="2" Header="Sexo" HorizontalAlignment="Left" Height="92" Margin="102,314,0,0" VerticalAlignment="Top" Width="418" Foreground="Black">
             <StackPanel Margin="2,-11,-2,11" >
-                <RadioButton x:Name="radioButton" Content="Macho" HorizontalAlignment="Left" Margin="42,22,0,0" VerticalAlignment="Top" Checked="radioButton_Checked" RenderTransformOrigin="1.272,1.937" Height="25">
+                <RadioButton x:Name="radioButton" TabIndex="7" Content="Macho" HorizontalAlignment="Left" Margin="42,22,0,0" VerticalAlignment="Top" Checked="radioButton_Checked" RenderTransformOrigin="1.272,1.937" Height="25">
                     <RadioButton.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -48,7 +48,7 @@
                         </TransformGroup>
                     </RadioButton.RenderTransform>
                 </RadioButton>
-                <RadioButton x:Name="radioButton1" Content="Hembra" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,0,0,0" Width="71" Height="22"/>
+                <RadioButton x:Name="radioButton1" TabIndex="8" Content="Hembra" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,0,0,0" Width="71" Height="22"/>
             </StackPanel>
         </GroupBox>
         <Image Height="auto" Width="auto" Source="imagenes\Mascota.jpg" Margin="270,10,10,520" RenderTransformOrigin="0.557,0.3" Grid.Column="1" />
