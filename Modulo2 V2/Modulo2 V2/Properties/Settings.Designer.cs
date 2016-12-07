@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Modulo2.Properties
+namespace Modulo2_V2.Properties
 {
 
 

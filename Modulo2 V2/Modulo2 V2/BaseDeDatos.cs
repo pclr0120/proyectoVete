@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-
-namespace Modulo2
+namespace Modulo2_V2
 {
-    public class BaseDeDatos
+   public class BaseDeDatos
     {
         public static MySqlConnection ObtenerConexion()
         {
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=Tutorial; Uid=root; pwd=;");
+            MySqlConnection conectar = new MySqlConnection("server=localhost; database=bdvete; Uid=root; pwd=paulico99");
 
             conectar.Open();
             return conectar;
         }
-
-       
     }
 }
