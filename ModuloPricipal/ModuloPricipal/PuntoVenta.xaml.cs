@@ -196,7 +196,8 @@ namespace ModuloPricipal
         {
             DialogoEliminarProducto win = new DialogoEliminarProducto();
             win.ShowDialog();
-            int valor = win.valor-1;
+            int valor = win.valor - 1;
+            //int valor = val;
             //ACtualizar LAS label
             //dd -= Convert.ToInt32(((DataRowView)dataGrid.Items[win.valor]).Row[3]);
             dd -= lista[valor].Precio;

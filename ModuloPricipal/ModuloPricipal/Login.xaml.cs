@@ -43,7 +43,7 @@ namespace ModuloPricipal
 
         
 
-        private void _login_in()
+        public bool _login_in()
         {
             try
             {
@@ -63,23 +63,25 @@ namespace ModuloPricipal
                     if (consulta.Tables[0].Rows.Count > 0)
                     {
 
-                        Menu m =  new Menu();
-                        m.Show();
-                        this.Close();
-
+                        //Menu m =  new Menu();
+                        //m.Show();
+                        //this.Close();
+                       
                     }
                     else
                     {
                         MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTA", "LOGIN"); txt_user.Focus();
                     }
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Consulte a su Administrador:" + ex.Message.ToString(), "Mensaje");
+                return false;
             }
 
-
+          
         }
         private void cmd_star_Click_1(object sender, RoutedEventArgs e)
         {
