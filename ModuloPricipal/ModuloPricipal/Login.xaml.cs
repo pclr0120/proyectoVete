@@ -63,10 +63,10 @@ namespace ModuloPricipal
                     if (consulta.Tables[0].Rows.Count > 0)
                     {
 
-                        //Menu m =  new Menu();
-                        //m.Show();
-                        //this.Close();
-                       
+                        Menu m = new Menu();
+                        m.Show();
+                        this.Close();
+
                     }
                     else
                     {
