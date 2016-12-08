@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloPricipal", "ModuloPricipal\ModuloPricipal.csproj", "{AF90C423-7AED-431E-84D3-C26CAACFBD3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloPrincipal", "ModuloPricipal\ModuloPrincipal.csproj", "{AF90C423-7AED-431E-84D3-C26CAACFBD3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloPricipalTests5", "ModuloPricipalTests5\ModuloPricipalTests5.csproj", "{4725A320-80EC-47E2-AF96-EFCD0D720F6A}"
 EndProject

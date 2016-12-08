@@ -40,6 +40,7 @@ namespace ModuloPricipal
 
 
         }
+        
         int _id;
         double _iva;
         double _precio;
@@ -196,31 +197,38 @@ namespace ModuloPricipal
         {
             DialogoEliminarProducto win = new DialogoEliminarProducto();
             win.ShowDialog();
-            int valor = win.valor - 1;
-            //int valor = val;
-            //ACtualizar LAS label
-            //dd -= Convert.ToInt32(((DataRowView)dataGrid.Items[win.valor]).Row[3]);
-            dd -= lista[valor].Precio;
-            //iva -= Convert.ToInt32(((DataRowView)dataGrid.Items[win.valor]).Row[2]);
-            iva -= lista[valor].Iva;
-            cc -= 1;
-            lbliva.Content = iva.ToString();
-            lblsubtol.Content = dd.ToString();
-
-            lbltotal.Content = (dd + iva).ToString();
-            //label
-            lista.Remove(lista.FirstOrDefault(c => c.Registro1 == win.valor));
-            int ccc = 1;
-            for (int i = 0; i < lista.Count; i++)
+            if (win.valor < dataGrid.Items.Count)
             {
 
-                lista[i].Registro1 = ccc;
-                ccc += 1;
-                registroProducto = ccc;
-            }
 
-            this.dataGrid.ItemsSource = lista;
-            this.dataGrid.Items.Refresh();
+
+                int valor = win.valor - 1;
+                //int valor = val;
+                //ACtualizar LAS label
+                //dd -= Convert.ToInt32(((DataRowView)dataGrid.Items[win.valor]).Row[3]);
+                dd -= lista[valor].Precio;
+                //iva -= Convert.ToInt32(((DataRowView)dataGrid.Items[win.valor]).Row[2]);
+                iva -= lista[valor].Iva;
+                cc -= 1;
+                lbliva.Content = iva.ToString();
+                lblsubtol.Content = dd.ToString();
+
+                lbltotal.Content = (dd + iva).ToString();
+                //label
+                lista.Remove(lista.FirstOrDefault(c => c.Registro1 == win.valor));
+                int ccc = 1;
+                for (int i = 0; i < lista.Count; i++)
+                {
+
+                    lista[i].Registro1 = ccc;
+                    ccc += 1;
+                    registroProducto = ccc;
+                }
+
+                this.dataGrid.ItemsSource = lista;
+                this.dataGrid.Items.Refresh();
+            }
+            else { MessageBox.Show("No existe ese producto", "Eliminar Producto"); }
 
 
 
@@ -385,13 +393,26 @@ namespace ModuloPricipal
         if (Key.F2 == e.Key && dataGrid.Items.Count > 0)
         {
                 _Eliminar();
+                Reporte R = new Reporte();
 
 
+                
 
 
         }
 
-    }
+            if (Key.F3 == e.Key )
+            {
+                
+                Reporte R = new Reporte();
+                R.Show();
+
+
+
+
+            }
+
+        }
     //public void EliminarProducto(int NumeroRegistro)
     //{
     //    //int valor;

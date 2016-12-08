@@ -58,9 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ModuloPricipal\ModuloPricipal.csproj">
+    <ProjectReference Include="..\ModuloPricipal\ModuloPrincipal.csproj">
       <Project>{AF90C423-7AED-431E-84D3-C26CAACFBD3F}</Project>
-      <Name>ModuloPricipal</Name>
+      <Name>ModuloPrincipal</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -79,7 +79,6 @@ C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\De
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\MahApps.Metro.pdb
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\MahApps.Metro.xml
-C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\MySql.Data.xml
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\ModuloPricipal.csprojResolveAssemblyReference.cache
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\Resources\Icons.baml
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\Resources\IconsNonShared.baml
@@ -117,3 +116,10 @@ C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\De
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\stdole.dll
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\RdlCompile.cache
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\obj\Debug\RdlCompile.compiled
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\FlashControlV71.dll
+C:\Users\pclrpclr\Source\Repos\proyectoVete\ModuloPricipal\ModuloPricipal\bin\Debug\ShockwaveFlashObjects.dll
