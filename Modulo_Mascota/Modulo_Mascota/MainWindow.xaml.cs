@@ -51,7 +51,6 @@ namespace Modulo_Mascota
             if (resultado > 0)
             {
                 MessageBox.Show("Mascota Guardado Con Exito!!", "Guardado");
-                Limpiar();
             }
             else
             {
@@ -69,21 +68,5 @@ namespace Modulo_Mascota
         {   
             this.Close();
         }
-        private void Limpiar()
-        {
-            txtCliente.Clear();
-            txtNombre.Clear();
-            txtEspecie.Clear();
-            txtRaza.Clear();
-            txtColor.Clear();
-            txtPeso.Clear();
-            txtSparti.Clear();
-            dtpFechaNacimiento.Text = "";
-            txtCliente.Focus();
-        }
-
-
-
-
     }
 }
