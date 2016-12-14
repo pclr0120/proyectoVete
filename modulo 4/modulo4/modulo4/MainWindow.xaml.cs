@@ -13,75 +13,76 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace modulo4
+namespace VeterinariaClientes
 {
     /// <summary>
     /// Interaction logic for ffdfdfMainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        String Database, Server, User, Password;
+        public MainWindow(String Database, String Server, String User,String Password)
         {
+            this.Database = Database;
+            this.Server = Server;
+            this.User = User;
+            this.Password = Password;
             InitializeComponent();
         }
         private void hola() {
         }
 
-        private void textBox_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtNombre_GotFocus(object sender, RoutedEventArgs e)
         {
-            textBox.SelectAll();
+            TxtNombre.SelectAll();
         }
 
-        private void textBox1_GotFocus(object sender, RoutedEventArgs e)
+        private void Txtapp_GotFocus(object sender, RoutedEventArgs e)
         {
-            textBox1.SelectAll();
+            Txtapp.SelectAll();
         }
 
-        private void textBox2_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtApm_GotFocus(object sender, RoutedEventArgs e)
         {
-            textBox2.SelectAll();
+            TxtApm.SelectAll();
         }
 
-        private void textBox3_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtTelefono_GotFocus(object sender, RoutedEventArgs e)
         {
-            textBox3.SelectAll();
+            TxtTelefono.SelectAll();
         }
 
-        private void textBox4_GotFocus(object sender, RoutedEventArgs e)
+        private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            textBox4.SelectAll();
+
         }
 
-        private void textBox5_GotFocus(object sender, RoutedEventArgs e)
+        private void DgGrid_Loaded_1(object sender, RoutedEventArgs e)
         {
-            textBox5.SelectAll();
+            DbConexion Conexion = new DbConexion(Server, User, Password, Database);
+            Conexion.Abrir();
+            MySqlCommand cmd = new MySqlCommand("", Conexion.Get());
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        private void TxtEmail_GotFocus(object sender, RoutedEventArgs e)
         {
-            // Se crea la conexión a la base de datos
-            MySqlConnection _conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings[&quot; cadConexion & quot;].ToString());
+            TxtEmail.SelectAll();
+        }
 
-            // Se abre la conexion
-            _conexion.Open();
+        private void TxtDireccion_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TxtDireccion.SelectAll();
+        }
 
-            // Se crea un DataTable que almacenará los datos desde donde se cargaran los datos al DataGridView
-            DataTable dtDatos = new DataTable();
-
-            // Se crea un MySqlAdapter para obtener los datos de la base
-            MySqlDataAdapter mdaDatos = new MySqlDataAdapter(&quot; SELECT* FROM tblCliente; &quot;, _conexion);
-
-            // Con la información del adaptador se rellena el DataTable
-            mdaDatos.Fill(dtDatos);
-
-            // Se asigna el DataTable como origen de datos del DataGridView
-            dgvDatos.DataSource = dtDatos;
-
-            // Se cierra la conexión a la base de datos
-            _conexion.Close();
+        private void DgGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            DbConexion Conexion = new DbConexion(Server, User, Password, Database);
+            Conexion.Abrir();
+            MySqlCommand cmd = new MySqlCommand("", Conexion.Get());
         }
     }
 }

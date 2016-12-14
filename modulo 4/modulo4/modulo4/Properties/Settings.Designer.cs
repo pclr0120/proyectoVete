@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace modulo4.Properties
+namespace VeterinariaClientes.Properties
 {
 
 
